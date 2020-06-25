@@ -1,0 +1,119 @@
+import * as React from 'react';
+import{NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import LoginScreen from '../View/Onboarding/Login';
+import AboutScreen from '../View/Onboarding/AboutScreen';
+import WelcomeScreen from '../View/Onboarding/WelcomeScreen';
+import TaskScreen from '../View/Onboarding/TaskScreen'
+import RegisterScreen from '../View/register/Register';
+import AppScreen from '../View/App/AppScreen';
+import Colors from '../Config/Colors';
+import SettingScreen from '../View/Setting/SettingScreen';
+import Drawer from '../../Drawer';
+
+
+const Stack = createStackNavigator();
+function Menu (){
+
+    return(
+     <NavigationContainer independent={true}> 
+      <Drawer/>
+    
+    </NavigationContainer>
+  
+    
+    );
+  }
+
+function mainNavigator(){
+    return(
+        <NavigationContainer>
+            <Stack.Navigator>
+            <Stack.Screen
+                name='Setting'
+                component={SettingScreen}
+                options={{title:'Settings'}}
+                ></Stack.Screen>
+            
+            <Stack.Screen
+                name='login'
+                component={LoginScreen}
+                options={{headerShown: false}}
+                
+                >                   
+
+                </Stack.Screen>
+                <Stack.Screen 
+                name='Menu' 
+                component={Menu}
+                options={{headerShown: false}}>
+                    
+                </Stack.Screen>
+                <Stack.Screen
+                name='WelcomeScreen'
+                component={WelcomeScreen}
+                options={{headerShown: false}}
+                WelcomeScreen
+                >                   
+
+                </Stack.Screen>
+                <Stack.Screen
+                name='AboutScreen'
+                component={AboutScreen}
+                options={{headerShown: false}}
+                
+                >  
+                </Stack.Screen> 
+                <Stack.Screen
+                name='TaskScreen'
+                component={TaskScreen}
+                options={{headerShown: false}}
+                
+                >                   
+
+                </Stack.Screen>
+                
+                <Stack.Screen
+                name='register'
+                component={RegisterScreen}
+                options={{title: 'Register Form',
+                            headerStyle:{backgroundColor: Colors.red},
+                            headerTintColor:Colors.white,
+                            headerTitleStyle: {
+                                fontWeight: 'bold',
+                                color:Colors.white,
+                            },
+
+
+
+            }}
+                >
+                    
+                
+                </Stack.Screen>
+                <Stack.Screen
+                name='App'
+                component={AppScreen}
+                options={{title:'App Main'}}
+                >
+                    
+                    
+                </Stack.Screen>
+                
+               
+                
+                
+            </Stack.Navigator>
+
+
+
+        </NavigationContainer>
+
+
+    );
+
+
+
+    
+}
+export default mainNavigator;
