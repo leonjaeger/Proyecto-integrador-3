@@ -19,7 +19,7 @@
     "expo": "~36.0.0",
     "expo-linear-gradient": "~8.0.0",
     "expo-ui-kit": "^0.1.1",
-    "firebase": "^7.15.0",
+    "firebase": "^10.9.0",
     "onboarding_danymilan": "0.0.4",
     "prop-types": "15.7.2",
     "react": "~16.9.0",
